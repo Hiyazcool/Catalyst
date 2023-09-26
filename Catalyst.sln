@@ -7,20 +7,26 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestRange", "TestRange\Test
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Catalyst", "Catalyst\Catalyst.vcxproj", "{94B892B1-488B-4495-BE6C-8EE5551F1DDE}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HiyazUtils", "HiyazUtils\HiyazUtils.vcxproj", "{3F44D570-121F-4BF3-9A42-C667A1AB98F2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
 		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{94B892B1-488B-4495-BE6C-8EE5551F1DDE}.Debug|x64.ActiveCfg = Debug|x64
-		{94B892B1-488B-4495-BE6C-8EE5551F1DDE}.Debug|x64.Build.0 = Debug|x64
-		{94B892B1-488B-4495-BE6C-8EE5551F1DDE}.Release|x64.ActiveCfg = Release|x64
-		{94B892B1-488B-4495-BE6C-8EE5551F1DDE}.Release|x64.Build.0 = Release|x64
 		{751CB9B4-30CF-41F3-BC9A-8364E00CAC35}.Debug|x64.ActiveCfg = Debug|x64
 		{751CB9B4-30CF-41F3-BC9A-8364E00CAC35}.Debug|x64.Build.0 = Debug|x64
 		{751CB9B4-30CF-41F3-BC9A-8364E00CAC35}.Release|x64.ActiveCfg = Release|x64
 		{751CB9B4-30CF-41F3-BC9A-8364E00CAC35}.Release|x64.Build.0 = Release|x64
+		{94B892B1-488B-4495-BE6C-8EE5551F1DDE}.Debug|x64.ActiveCfg = Debug|x64
+		{94B892B1-488B-4495-BE6C-8EE5551F1DDE}.Debug|x64.Build.0 = Debug|x64
+		{94B892B1-488B-4495-BE6C-8EE5551F1DDE}.Release|x64.ActiveCfg = Release|x64
+		{94B892B1-488B-4495-BE6C-8EE5551F1DDE}.Release|x64.Build.0 = Release|x64
+		{3F44D570-121F-4BF3-9A42-C667A1AB98F2}.Debug|x64.ActiveCfg = Debug|x64
+		{3F44D570-121F-4BF3-9A42-C667A1AB98F2}.Debug|x64.Build.0 = Debug|x64
+		{3F44D570-121F-4BF3-9A42-C667A1AB98F2}.Release|x64.ActiveCfg = Release|x64
+		{3F44D570-121F-4BF3-9A42-C667A1AB98F2}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

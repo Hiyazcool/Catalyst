@@ -24,9 +24,15 @@
     <ClInclude Include="src\Catalyst.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\Catalyst\EntryPoint.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Catalyst\Application.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Catalyst\Print.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

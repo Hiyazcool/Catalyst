@@ -51,9 +51,10 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>CATALYST_PLATFORM_WINDOWS;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>CATALYST_PLATFORM_WINDOWS;HIYAZUTILS_PLATFORM_WINDOWS;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Catalyst\src;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Catalyst\src;$(SolutionDir)\HiyazUtils\src;</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -66,9 +67,10 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>CATALYST_PLATFORM_WINDOWS;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>CATALYST_PLATFORM_WINDOWS;HIYAZUTILS_PLATFORM_WINDOWS;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Catalyst\src;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Catalyst\src;$(SolutionDir)\HiyazUtils\src;</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -80,6 +82,9 @@
   <ItemGroup>
     <ProjectReference Include="..\Catalyst\Catalyst.vcxproj">
       <Project>{94b892b1-488b-4495-be6c-8ee5551f1dde}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\HiyazUtils\HiyazUtils.vcxproj">
+      <Project>{3f44d570-121f-4bf3-9a42-c667a1ab98f2}</Project>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

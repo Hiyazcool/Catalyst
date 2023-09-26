@@ -5,6 +5,9 @@
       <FullPath>C:\Dev\Catalyst\project\Debug-x64\Catalyst\Catalyst.dll</FullPath>
     </ProjectOutput>
     <ProjectOutput>
+      <FullPath>C:\Dev\Catalyst\project\Debug-x64\HiyazUtils\HiyazUtils.dll</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
       <FullPath>C:\Dev\Catalyst\project\Debug-x64\TestRange\TestRange.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>

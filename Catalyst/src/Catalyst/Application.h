@@ -7,7 +7,9 @@ namespace Catalyst {
 		Application();
 		virtual ~Application();
 
-		void Run();
+		virtual void Run() = 0;
 	};
+
+	Application* CreateApplication();
 }
 

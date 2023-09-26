@@ -1,4 +1,5 @@
 #include "Application.h"
+#include <iostream>
 namespace Catalyst {
 
 	Application::Application() {
@@ -6,8 +7,5 @@ namespace Catalyst {
 	}
 	Application::~Application() {
 
-	}
-	void Application::Run() {
-		while (true);
 	}
 }
