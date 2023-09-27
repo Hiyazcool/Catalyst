@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?><DEFECTS><DEFECT>
+    <SFA>
+      <FILEPATH>C:\Dev\Catalyst\HiyazUtils\src\HiyazUtils\</FILEPATH>
+      <FILENAME>String.cpp</FILENAME>
+      <LINE>61</LINE>
+      <COLUMN>9</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'HiyazUtils::string::stringArray' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>HiyazUtils::string::{ctor}</FUNCTION>
+    <DECORATED>??0string@HiyazUtils@@QEAA@PEAV01@@Z</DECORATED>
+    <FUNCLINE>61</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>HiyazUtils::string::stringArray</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>C:\Dev\Catalyst\HiyazUtils\src\HiyazUtils\</FILEPATH>
+      <FILENAME>String.cpp</FILENAME>
+      <LINE>64</LINE>
+      <COLUMN>9</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'HiyazUtils::string::stringArray' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>HiyazUtils::string::{ctor}</FUNCTION>
+    <DECORATED>??0string@HiyazUtils@@QEAA@AEAV01@@Z</DECORATED>
+    <FUNCLINE>64</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>HiyazUtils::string::stringArray</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT></DEFECTS>

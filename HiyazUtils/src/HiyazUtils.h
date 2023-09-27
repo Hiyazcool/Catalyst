@@ -6,3 +6,4 @@
 #include "HiyazUtils\Print.h"
 #include "HiyazUtils\Format.h"
 #include "HiyazUtils\String.h"
+#include "HiyazUtils\String.cpp"

@@ -18,12 +18,10 @@ using namespace HiyazUtils;
 		~Labryinth() {
 
 		}
-		char* Function() {
-			char* str = new char[10];
-			str[9] = 0;
-			return str;
-		}
 		void Run() {
+
+			
+			
 
 			string one("one ");
 			string two("two ");
@@ -34,18 +32,28 @@ using namespace HiyazUtils;
 			string seven("seven ");
 			string eight("eight ");
 			string nine("nine");
-			string newLine("\n");
-			string test("Testing ");
-			
-			std::cout << "Starting \n";
-			test += one + two;
-			test += "three ";
-			test += newLine;
-			std::cout << test << std::endl;
-			test = *(one + two) + three;
-			std::cout << test << std::endl;
+			string test;
+			test = nine + one;
+			test += eight + six;
+
+			if(one > two)
+				std::cout << "> True";
+			else
+				std::cout << "> False";
+			if (one > test)
+				std::cout << "> True";
+			else
+				std::cout << "> False";
+
+			if (one < two)
+				std::cout << "< True";
+			else
+				std::cout << "< False";
+			if (one < test)
+				std::cout << "< True";
+			else
+				std::cout << "< False";
 			std::cin.get();
-			
 
 		}
 
