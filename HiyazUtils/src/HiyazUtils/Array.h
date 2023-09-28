@@ -1,6 +1,6 @@
 #pragma once
 template<size_t Size,typename T>
-class Array {
+class  Array {
 	/* Todo :
 	Iterator
 	*/

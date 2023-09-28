@@ -2,6 +2,7 @@
 #include "Core.h"
 #include <tuple>
 #include "Print.h"
+#include "Format.h"
 /*
 Make Thread Safe
 

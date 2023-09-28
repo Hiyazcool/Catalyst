@@ -5,9 +5,7 @@ namespace HiyazUtils {
 			String&& versions of Operators ---- Later Time
 				check that it is not stealing other variables values unless intended
 	*/
-	void Work() {
-			}
-	class string {
+	class string  {
 	private:
 	public:
 		const char* operator()() const {
@@ -169,7 +167,7 @@ namespace HiyazUtils {
 			return CompareStrings(stringArray, Simplify(_otherArray));
 		}
 	};
-	std::ostream& operator<<(std::ostream& stream, const string& string) {
+	inline std::ostream& operator<<(std::ostream& stream, const string& string) {
 		stream << string();
 		return stream;
 	}
