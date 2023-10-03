@@ -13,10 +13,15 @@ Todo : In order of Priority
 Event Abstract class?????
 	+=/-= control listners?
 
-
-
-
-
+Make strings implicitly convert to Rvalue References to reduce Overloads and Hopefully fix the Errors
+https://stackoverflow.com/questions/4421706/what-are-the-basic-rules-and-idioms-for-operator-overloading
+https://learn.microsoft.com/en-us/cpp/cpp/reference-type-function-returns?view=msvc-170
+https://learn.microsoft.com/en-us/cpp/cpp/rvalue-reference-declarator-amp-amp?view=msvc-170
+https://learn.microsoft.com/en-us/cpp/cpp/temporary-objects?view=msvc-170
+https://learn.microsoft.com/en-us/cpp/cpp/abstract-classes-cpp?view=msvc-170
+constexpr
+inline
+friend
 
 
 Ptr string = new string() <-Stack allocated
