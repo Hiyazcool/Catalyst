@@ -7,6 +7,7 @@ This Shouldnt be called ReadMe in all Intents and Purposes, BUT I am having fun 
 		Going to be Frustrating TBH
 	Rebuild Log
 		I need to figure out how to use preproccessors properly to really use this effectively
+		Doesnt need to be a class, just a namespace
 		LONGTERM:
 			Output to File for ease of use????????
 				Idk
@@ -15,13 +16,19 @@ This Shouldnt be called ReadMe in all Intents and Purposes, BUT I am having fun 
 				Or is this too complicated? (Probably, Will focus on another avenue like IToString interface or overloading <<) 
 	Rebuild Print
 		Should be Mostly if Not All inline just use Print as a easier way then cout because cout looks stupid IMO
+		Doesnt need to be a class, just a namespace
 	Expand on List/Array
 		Maybe look into rewrite to optimise
 	Thread Manager?
 	Deprecated--Expand on String
 		Rewrite String (Mostly)
+			Implicit Conversion to Char*
+			Need to make all operator overloads use char*s or strings idk yet, but I need to prevent ambiguity
+				I beleive since there would be a Overload for each it will take the string overload before trying to convert
+			Make Most of it Inline?
 	Build Format
 		Needs to be Seperate from string BUT maybe look into Moving some String Functionality to Format Since I THINK I know the Header problem enough to solve
+		Doesnt need to be a class, just a namespace
 Event Abstract class????? 
 	Need to figure out how to implent abstract wrapper for subscribers, I believe I need to go down the pointer route instead of a reference?
 	+=/-= control listners (Supplemented by Subscribe/Unsubscribe Functions)
@@ -53,6 +60,8 @@ https://learn.microsoft.com/en-us/cpp/cpp/abstract-classes-cpp?view=msvc-170
 constexpr
 inline
 friend
+
+need to understand Volatile
 
 Ptr string = new string() <-Stack allocated
 Ptr* string = new string() <- Heap allocated
