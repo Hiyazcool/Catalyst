@@ -1,63 +1,30 @@
 #pragma once
 #include <string>
 #include <iostream>
-class IPrintable {
-	public:
-		virtual char* PrintInfo() = 0;
-};
-
-	static void Print(char* _string) {
-		std::cout << _string;
-	}
-	static void Print(IPrintable* _printable) {
-		Print((char*)_printable->PrintInfo());
-	}
-	static void Print(std::string _string) {
-		std::cout << _string;
-	}
-	template<typename T>
-	static void Print(T _type) {
-		std::cout << _type;
-	}
-	template<typename First,typename...Args>
-	static void Print(First first, Args ...args) {
-		print(first);
-		Print(args...);
-	}
-	static void PrintL(char* _string) {
-		std::cout << _string << "\n";
-	}
-	static void PrintL(IPrintable* _printable) {
-		PrintL((char*)_printable->PrintInfo());
-	}
-	static void PrintL(std::string _string) {
-		std::cout << _string << "\n";
-	}
-	template<typename T>
-	static void PrintL(T _type) {
-		std::cout << _type << "\n";
-	}
-	template<typename First, typename...Args>
-	static void PrintL(First first, Args ...args) {
-		PrintL(first);
-		PrintL(args...);
-	}
-	static void PrintC(char* _string) {
-		std::cout << _string << ", ";
-	}
-	static void PrintC(IPrintable* _printable) {
-		PrintC((char*)_printable->PrintInfo());
-	}
-	static void PrintC(std::string _string) {
-		std::cout << _string << ", ";
-	}
-	template<typename T>
-	static void PrintC(T _type) {
-		std::cout << _type << ", ";
-	}
-	template<typename First, typename...Args>
-	static void PrintC(First first,Args ...args) {
-		PrintC(first);
-		PrintC(args...);			
+#include "Format.h"
+namespace HiyazUtils {
+namespace Print {
+	class IPrintable {
+		public:
+			virtual char* PrintInfo() = 0;
 	};
+	template<typename Args&...args>
+	inline const static void const Print(Args& ..._args) {
+		Print(FormatString(_args));
+	}
+	inline const static void const Print(const char* _pointer);
+	inline const static void const Print(const std::string _pointer);
+	inline const static void const Print(const string* _pointer);
 
+	template<typename T, typename Args&...args>
+	inline const static void const PrintL(bool _isSeperateLines = True, T _string, Args& ..._args) {
+		if (_isSeperateLines) 
+			Print(FormatStringList(_string, _args));
+		else
+			PrintL(FormatString(_string, _args));
+	}
+	inline const static void const PrintL(const char* _pointer);
+	inline const static void const PrintL(const std::string _pointer);
+	inline const static void const PrintL(const string* _pointer);
+
+}}
