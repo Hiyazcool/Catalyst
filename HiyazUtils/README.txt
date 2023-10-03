@@ -1,7 +1,11 @@
 This Shouldnt be called ReadMe in all Intents and Purposes, BUT I am having fun so f off
 
 ------------------------------ Todo : In order of Priority --------------------------------------
-	
+
+	Need to understand why the string is calling destructor
+		is it using non ref types?
+		is it because I am using a ref then a non ref????????????????
+		is it because I am stupid (Probably)
 	Learning Events / Setting up Events for Game Engine
 	Unique/Smart Pointers
 		Going to be Frustrating TBH
