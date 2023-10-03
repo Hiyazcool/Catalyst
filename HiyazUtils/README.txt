@@ -6,6 +6,9 @@ This Shouldnt be called ReadMe in all Intents and Purposes, BUT I am having fun 
 		is it using non ref types?
 		is it because I am using a ref then a non ref????????????????
 		is it because I am stupid (Probably)
+			I believe it has to do with with the Template regard the args as non Ref or OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+				IT ALWAYS HAPPENS AFTER THE SIMPLIFY RETURN VALUE GOES OUT OF SCOPE I THINK 
+				Idk
 	Learning Events / Setting up Events for Game Engine
 	Unique/Smart Pointers
 		Going to be Frustrating TBH
