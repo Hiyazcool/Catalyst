@@ -23,6 +23,7 @@ constexpr
 inline
 friend
 
+Stupid Idea, use a function pointer to move a to b in string inside a forloop for each string just to spice things up
 
 Ptr string = new string() <-Stack allocated
 Ptr* string = new string() <- Heap allocated
