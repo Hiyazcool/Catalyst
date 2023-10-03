@@ -12,6 +12,8 @@ namespace Format {
 	static string& FormatIntoString(Args& ..._args);
 	template<typename Args&... args>
 	static void FormatString(string* _destination, Args& ..._args);
+	template<typename Args&... args>
+	static void FormatStringList(string* _destination, Args& ..._args);
 	static void FillCharArray(char* _destination, char* _source);
 	static void FillCharArray(char* _destination, char*&& _source); // rValue
 	static void FillCharArray(char* _destination, string* _source);
