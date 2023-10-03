@@ -15,6 +15,7 @@ namespace Print {
 	inline const static void const Print(const char* _pointer);
 	inline const static void const Print(const std::string _pointer);
 	inline const static void const Print(const string* _pointer);
+	inline const static void const Print(const IPrintable _pointer);
 
 	template<typename T, typename Args&...args>
 	inline const static void const PrintL(bool _isSeperateLines = True, T _string, Args& ..._args) {
@@ -26,5 +27,5 @@ namespace Print {
 	inline const static void const PrintL(const char* _pointer);
 	inline const static void const PrintL(const std::string _pointer);
 	inline const static void const PrintL(const string* _pointer);
-
+	inline const static void const PrintL(const IPrintable _pointer);
 }}
