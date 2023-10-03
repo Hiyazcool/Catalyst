@@ -1,20 +1,51 @@
+This Shouldnt be called ReadMe in all Intents and Purposes, BUT I am having fun so f off
 
-
-Todo : In order of Priority
+------------------------------ Todo : In order of Priority --------------------------------------
+	
 	Learning Events / Setting up Events for Game Engine
 	Unique/Smart Pointers
+		Going to be Frustrating TBH
 	Rebuild Log
+		I need to figure out how to use preproccessors properly to really use this effectively
+		LONGTERM:
+			Output to File for ease of use????????
+				Idk
+			Can I setup a Non-member Func that I can Overload???????????
+				So each different type can overload it (ToLog or something, Idk if ToString is taken in default c++)
+				Or is this too complicated? (Probably, Will focus on another avenue like IToString interface or overloading <<) 
 	Rebuild Print
+		Should be Mostly if Not All inline just use Print as a easier way then cout because cout looks stupid IMO
 	Expand on List/Array
+		Maybe look into rewrite to optimise
 	Thread Manager?
-	Expand on String
-	BuildFormat
+	Deprecated--Expand on String
+		Rewrite String (Mostly)
+	Build Format
+		Needs to be Seperate from string BUT maybe look into Moving some String Functionality to Format Since I THINK I know the Header problem enough to solve
+Event Abstract class????? 
+	Need to figure out how to implent abstract wrapper for subscribers, I believe I need to go down the pointer route instead of a reference?
+	+=/-= control listners (Supplemented by Subscribe/Unsubscribe Functions)
+	Invoke/InvokeWithThreads
+	
+------------------------------ Spicy Ideas -------------------------------------------------------
 
-Event Abstract class?????
-	+=/-= control listners?
+Stupid Idea, use a function pointer to move a to b in string inside a forloop for each string just to spice things up
+use bit shifting to just move the array data directly in chunks????
+
+Also I REALLY WANT TO GET INTO THREADING, but I am hella not ready for it, especially since I want to make a thread manager for it, because I hate myself and love the idea.
+
+------------------------------ Notes For Me ------------------------------------------------------
 
 Make strings implicitly convert to Rvalue References to reduce Overloads and Hopefully fix the Errors
+
 https://stackoverflow.com/questions/4421706/what-are-the-basic-rules-and-idioms-for-operator-overloading
+
+	IMPLICIT CONVERSION OPERATORS
+		AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+	WHY DIDNT I THINK THAT IN REALITY IT WAS JUST A CONVERSION 
+		IMMMMMM SOOOOO STUPIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIDDDDDDD!!!!!!!!!!!!!!
+	I am very happy now ^_^
+
 https://learn.microsoft.com/en-us/cpp/cpp/reference-type-function-returns?view=msvc-170
 https://learn.microsoft.com/en-us/cpp/cpp/rvalue-reference-declarator-amp-amp?view=msvc-170
 https://learn.microsoft.com/en-us/cpp/cpp/temporary-objects?view=msvc-170
@@ -22,8 +53,6 @@ https://learn.microsoft.com/en-us/cpp/cpp/abstract-classes-cpp?view=msvc-170
 constexpr
 inline
 friend
-
-Stupid Idea, use a function pointer to move a to b in string inside a forloop for each string just to spice things up
 
 Ptr string = new string() <-Stack allocated
 Ptr* string = new string() <- Heap allocated
