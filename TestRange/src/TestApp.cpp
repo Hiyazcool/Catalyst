@@ -5,56 +5,27 @@
 #include "HiyazUtils\Array.h"
 #include "HiyazUtils\String.h"
 #include "HiyazUtils\Format.h"
+#include <functional>
 //#include <string>
 using namespace HiyazUtils;
 //using namespace HiyazUtils
 
-
 	class Labryinth : public Catalyst::Application {
 	public :
+		Event TestEvent;
+		void(*Sub)(const EventArgs _args);
 		Labryinth() {
 
 		}
 		~Labryinth() {
 
 		}
+		void TestSub(const EventArgs _args) {
+			std::cout << "Test Successful!";
+		}
 		void Run() {
-
 			
-			
-
-			string one("one ");
-			string two("two ");
-			string three("three ");
-			string four("four ");
-			string five("five");
-			string six("six ");
-			string seven("seven ");
-			string eight("eight ");
-			string nine("nine");
-			string test;
-			test = nine + one;
-			test += eight + six;
-
-			if(one > two)
-				std::cout << "> True";
-			else
-				std::cout << "> False";
-			if (one > test)
-				std::cout << "> True";
-			else
-				std::cout << "> False";
-
-			if (one < two)
-				std::cout << "< True";
-			else
-				std::cout << "< False";
-			if (one < test)
-				std::cout << "< True";
-			else
-				std::cout << "< False";
-			std::cin.get();
-
+			TestEvent += &Labryinth::TestSub;
 		}
 
 	};

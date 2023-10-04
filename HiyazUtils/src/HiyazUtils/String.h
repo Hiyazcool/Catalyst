@@ -4,6 +4,8 @@ namespace HiyazUtils {
 	/*
 			String&& versions of Operators ---- Later Time
 				check that it is not stealing other variables values unless intended
+			C++ is a load of Bullshit sometimes
+			
 	*/
 	class string  {
 	private:
@@ -130,10 +132,16 @@ namespace HiyazUtils {
 			stringArray(ConstructString(_first, _args...)) {
 		}	
 		~string();
-		template<typename T>
-		string* operator+(T& _otherArray) noexcept {	
-			return ConstructString(stringArray, Simplify(_otherArray));
+		template<typename Y, typename T>
+		friend string* operator+(Y& _stringArray, T& _otherArray) noexcept {	
+			return ConstructString(Simplify(_stringArray), Simplify(_otherArray));
 		}
+		template<typename T>
+		friend string* operator+(string* _stringArray, T& _otherArray) noexcept {
+			return ConstructString(Simplify(_stringArray), Simplify(_otherArray));
+		}
+
+
 		template<typename T>
 		void operator+=(T _otherArray) {
 			ConstructString(stringArray, _otherArray);
