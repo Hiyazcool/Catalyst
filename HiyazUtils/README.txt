@@ -1,5 +1,5 @@
 This Shouldnt be called ReadMe in all Intents and Purposes, BUT I am having fun so f off
-
+And the Point of My Util Library is nto to be better than the Standard Library or anyone else I am just Trying to learn how to do everything so I thought "Well I need to practice on something, soooooo why don't I Just make a better Standard library than than the Standard Library and everyone else!" ( I'm not self-absorbed, I'm Humorous, and-self absorbed!)
 ------------------------------ Todo : In order of Priority --------------------------------------
 
 	Need to understand why the string is calling destructor
@@ -41,13 +41,16 @@ Event Abstract class?????
 	Need to figure out how to implent abstract wrapper for subscribers, I believe I need to go down the pointer route instead of a reference?
 	+=/-= control listners (Supplemented by Subscribe/Unsubscribe Functions)
 	Invoke/InvokeWithThreads
-	
+------------------------------ Already Did List (Major Points) -----------------------------------
+Planned out: (To an Extent)
+	Format
+	Print
 ------------------------------ Spicy Ideas -------------------------------------------------------
 
 Stupid Idea, use a function pointer to move a to b in string inside a forloop for each string just to spice things up
 use bit shifting to just move the array data directly in chunks????
 
-Also I REALLY WANT TO GET INTO THREADING, but I am hella not ready for it, especially since I want to make a thread manager for it, because I hate myself and love the idea.
+Also I REALLY WANT TO GET INTO THREADING, but I am hella not ready for it, I barely Understood how to use it effectively in C#! BUT I WANT TO, especially since I want to make a thread manager for it, because I hate myself and love the idea.
 
 ------------------------------ Notes For Me ------------------------------------------------------
 
@@ -83,3 +86,5 @@ Heap corruption detected: after normal block
 			 - Array[Out of bounds int] error throws at Delete
 
 Public Templates -> _Overloads
+
+
