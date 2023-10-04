@@ -17,6 +17,7 @@ namespace Format {
 	static void FillCharArray(char* _destination, char* _source);
 	static void FillCharArray(char* _destination, char*&& _source); // rValue
 	static void FillCharArray(char* _destination, string* _source);
+	static void FillCharArray(char* _destination, IPrintable* _source);
 	template<typename Args&... args>
 	static size_t CalculatestringLength(char* _string, Args& ..._args);
 	template<typename Args&... args>
@@ -25,4 +26,5 @@ namespace Format {
 	static size_t CalculatestringLength(IPrintable* _string, Args& ..._args);
 	static size_t CalculatestringLength(char* _string);
 	static size_t CalculatestringLength(string* _string);
+	static size_t CalculatestringLength(IPrintable* _string);
 }}
