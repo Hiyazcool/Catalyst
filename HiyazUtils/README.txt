@@ -33,6 +33,7 @@ This Shouldnt be called ReadMe in all Intents and Purposes, BUT I am having fun 
 			Need to make all operator overloads use char*s or strings idk yet, but I need to prevent ambiguity
 				I beleive since there would be a Overload for each it will take the string overload before trying to convert
 			Make Most of it Inline?
+			Add IPrintable Pointer Overloads
 	Build Format
 		Needs to be Seperate from string BUT maybe look into Moving some String Functionality to Format Since I THINK I know the Header problem enough to solve
 		Doesnt need to be a class, just a namespace
