@@ -4,10 +4,14 @@
 #include "Format.h"
 namespace HiyazUtils {
 namespace Print {
-	class IPrintable {  // Seperate Into Seperate File So Format and Prin Can use it without conflicting with eachother
-			virtual const char* const PrintInfo() = 0;
+	class IPrintable {  // Seperate Into Seperate File So Format and Print Can use it without conflicting with eachother
 		public: 
-			operator const char*() const { return PrintInfo; }
+			// Used to Display All Relevent Info for Debugging Purposes Default Overloaded to Print with Implicit Cast to Char*
+			virtual const char* const PrintDebugInfo() = NULL; 
+			// Operator Overload Simple as that
+			operator const char*() const { return PrintDebugInfo(); }
+			// Used to Display Critical Info, that Would Pertain to Testing
+			virtual const char* const ToString() = NULL;
 	};
 	template<typename Args&...args>
 	inline const static void const Print(Args& ..._args) {
