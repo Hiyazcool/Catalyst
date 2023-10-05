@@ -114,5 +114,22 @@ namespace HiyazUtils
 		void Event::InvokeThreaded(const EventArgs& _args) {
 
 		}
+		Event::FunctionWrapper::FunctionWrapper(auto callback) :
+				Index(-1),
+				Callback(callback) {
+
+			}
+		std::function<ReturnType(CallbackParameters&)>& Event::FunctionWrapper::SetCallback() {
+			try {
+				if (Index != -1)
+					throw std::invalid_argument("This Wrapper is Currently Listening!");
+				else
+					return Callback;
+			}
+			catch (std::invalid_argument e)
+			{
+				std::cout << e.what() << std::endl;
+			}
+		}
 }
 }
