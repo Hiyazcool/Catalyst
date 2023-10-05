@@ -2,6 +2,11 @@ This Shouldnt be called ReadMe in all Intents and Purposes, BUT I am having fun 
 And the Point of My Util Library is nto to be better than the Standard Library or anyone else I am just Trying to learn how to do everything so I thought "Well I need to practice on something, soooooo why don't I Just make a better Standard library than than the Standard Library and everyone else!" ( I'm not self-absorbed, I'm Humorous, and-self absorbed!)
 ------------------------------ Todo : In order of Priority --------------------------------------
 
+	Add Try/Catch Blocks to more Risky Code Sections
+		Mainly when Pointers are involved
+	Define some more Preproccessors  (Like uint)
+		Event Wrapper?
+		Lambdas?
 	Need to understand why the string is calling destructor
 		is it using non ref types?
 		is it because I am using a ref then a non ref????????????????
