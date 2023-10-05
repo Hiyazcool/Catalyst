@@ -1,9 +1,38 @@
 #pragma once
 #include <iostream>
 #include <iterator>
+#include "IPrintable.h"
+#include "Define.h"
 namespace HiyazUtils {
 	/*
-	Seperate Implementaions
+		Todo:
+			Dedicated Search Function
+			Remove Function
+				Via Index or Search
+			Add At Place Function
+				Via Index
+				Or In Front
+			Shift Array Left Or Right
+				Maybe do Via offset index variable????
+					reduce lag of manually moving variables
+					Would need Bounds checking
+					Temporary index shift while Async creates new???
+						Could be Fun
+			Comparison
+				Between list
+					Return Instances of Same obj / seperate for same types
+				num of Items
+			Scramble
+				Create a Second Array of Indexs Temp then Async them into another??
+					Check if index is null if true go to new location to provide easier access?
+						Lock ones being used on Main
+			ToString Function
+				A TryToString to all obj in list
+
+			Add a Free Index Array?
+
+
+			Make a Queue Object
 	
 	*/
 	template<typename T>
@@ -52,13 +81,15 @@ namespace HiyazUtils {
 		PointerType ptr;
 	};
 	template<typename T>
-	class List
+	class List : IPrintable
 	{
-		/* Todo:
-		Iterator
-		Delete certain index
-		Emplace in certain index
-		*/
+		virtual const char* PrintDebugInfo() {
+			return "Not Implemented Yet";
+		}
+		operator const char* () { return PrintDebugInfo(); }
+		virtual const char* const ToString() {
+			return "Not Implemented Yet";
+		}
 	public:
 		using ValueType = T;
 		using Iterator = ListIterator<List<T>>;
@@ -115,6 +146,12 @@ namespace HiyazUtils {
 			new(&dataArray[dataSize]) T(std::forward<Args>(args)...);
 			return dataArray[dataSize++];
 		}
+		uint AddWithIndex(T& _value) {
+			if (dataSize > dataCapacity - 1)
+				ReAlloc(dataCapacity + dataCapacity / 2);
+			dataArray[dataSize] = _value;
+			return dataSize++;
+		}
 		template<typename ComparisonType>
 		bool operator==(ComparisonType _other) {
 			if (typeid(ValueType) == typeid(ComparisonType))
@@ -134,6 +171,10 @@ namespace HiyazUtils {
 		
 		void operator-=(T _other) {
 			
+		}
+		void operator-=(uint _other) {
+			if (_other < dataSize && _other > -1)
+				dataArray[_other] = NULL;
 		}
 		Iterator begin() {
 			return Iterator(dataArray);

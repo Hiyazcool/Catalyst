@@ -11,6 +11,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\HiyazUtils\Grid.cpp" />
+    <ClCompile Include="src\HiyazUtils\Array.cpp" />
     <ClCompile Include="src\HiyazUtils\Events.cpp" />
     <ClCompile Include="src\HiyazUtils\List.cpp" />
     <ClCompile Include="src\HiyazUtils\Print.cpp" />
@@ -18,9 +20,12 @@
     <ClCompile Include="src\HiyazUtils\String.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\HiyazUtils\Grid.h" />
+    <ClInclude Include="src\HiyazUtils\Define.h" />
     <ClInclude Include="src\HiyazUtils\Events.h" />
     <ClInclude Include="src\HiyazUtils\Array.h" />
     <ClInclude Include="src\HiyazUtils\Format.h" />
+    <ClInclude Include="src\HiyazUtils\IPrintable.h" />
     <ClInclude Include="src\HiyazUtils\List.h" />
     <ClInclude Include="src\HiyazUtils\Print.h" />
     <ClInclude Include="src\HiyazUtils.h" />

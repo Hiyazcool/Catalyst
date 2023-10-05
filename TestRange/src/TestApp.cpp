@@ -3,17 +3,21 @@
 #include "HiyazUtils.h"
 #include "HiyazUtils\List.h"
 #include "HiyazUtils\Array.h"
-#include "HiyazUtils\String.h"
 #include "HiyazUtils\Format.h"
+#include "HiyazUtils/String.h"
+#include "HiyazUtils/Grid.h"
+#include "HiyazUtils/Events.h"
 #include <functional>
 //#include <string>
 using namespace HiyazUtils;
+using namespace Format;
 //using namespace HiyazUtils
 
 	class Labryinth : public Catalyst::Application {
 	public :
 		Event TestEvent;
-		void(*Sub)(const EventArgs _args);
+		FunctionWrapper* TestWrapper;
+		int Something;
 		Labryinth() {
 
 		}
@@ -21,11 +25,19 @@ using namespace HiyazUtils;
 
 		}
 		void TestSub(const EventArgs _args) {
-			std::cout << "Test Successful!";
+			std::cout << "Test Successful! " << TestWrapper->Index << " " << Something;
 		}
 		void Run() {
+			Something = 223;
+			TestWrapper = new FunctionWrapper(std::function<void(EventArgs)> { [&, this](EventArgs _args) { this->TestSub(_args);} });
+			TestWrapper->Callback = { [&, this](EventArgs _args) { this->TestSub(_args);} };
+			TestEvent += TestWrapper;
+			Something = 1032;
+			TestEvent.Invoke(EventArgs());
+			TestEvent -= TestWrapper;
+			TestEvent.Invoke(EventArgs());
+			std::cin.get();
 			
-			TestEvent += &Labryinth::TestSub;
 		}
 
 	};
