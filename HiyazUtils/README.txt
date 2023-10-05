@@ -7,6 +7,9 @@ And the Point of My Util Library is nto to be better than the Standard Library o
 	Define some more Preproccessors  (Like uint)
 		Event Wrapper?
 		Lambdas?
+*****		#Define DEBUG
+*****			for #IFDEF DEBUG Blocks
+				
 	Need to understand why the string is calling destructor
 		is it using non ref types?
 		is it because I am using a ref then a non ref????????????????
