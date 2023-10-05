@@ -89,27 +89,12 @@ class EventArgs {
 	public:
 		struct FunctionWrapper final {
 		private:
-			uint Index = -1; // Make Event Friend of this so it can be const and still be editable by Events
+			uint Index = -1;
 			friend class Event;
 		public:
-			FunctionWrapper(auto callback) :
-				Index(-1),
-				Callback(callback) {
-
-			}
+			FunctionWrapper(auto callback);
 			std::function<ReturnType(CallbackParameters&)>& Callback;
-			std::function<ReturnType(CallbackParameters&)>& SetCallback() {
-				try {
-					if (Index != -1)
-						throw std::invalid_argument("This Wrapper is Currently Listening!");
-					else
-						return Callback;
-				}
-				catch (std::invalid_argument e)
-				{
-					std::cout << e.what() << std::endl;
-				}
-			}
+			std::function<ReturnType(CallbackParameters&)>& SetCallback();
 		};
 	private:
 		struct EventThreadQueueObject {
