@@ -14,6 +14,12 @@ Maybe use lambdas??????
 	Todo:
 		Validity Checks to Make sure Listner still exist!!!!!!!!!!!!!!!!
 		Make it Easier to Add Listners ie Not 3-4 lines of code, Automate thru defines etc
+   		
+     		Base Event With Abstract Functions
+			Allows Me to make a Generic Event with No Args As Well As Template Versions
+
+				
+   				
 
 		Look at Hashs instead of Wrappers to track Functions
 		Seperate Implementation
@@ -30,11 +36,11 @@ Maybe use lambdas??????
 https://en.wikipedia.org/wiki/Observer_pattern
 */	
 namespace HiyazUtils {
+namespace Event {
 class EventArgs {
-
+	auto Source;
 	};
-
-		struct FunctionWrapper final {
+	struct FunctionWrapper final {
 		private:
 			uint Index = -1; // Make Event Friend of this so it can be const and still be editable by Events
 			friend class Event;
@@ -44,8 +50,8 @@ class EventArgs {
 				Callback(callback) {
 
 			}
-			std::function<void(EventArgs)>& Callback;
-			std::function<void(EventArgs)>& SetCallback() {
+			std::function<void(const EventArgs&)>& Callback;
+			std::function<void(const EventArgs&)>& SetCallback() {
 				try {
 					if (Index != -1)
 						throw std::invalid_argument("This Wrapper is Currently Listening!");
@@ -58,7 +64,7 @@ class EventArgs {
 				}
 			}
 		};
-	class Event final
+	class OldEvent final
 	{
 		struct EventThreadQueueObject {
 			List<void(*)(const EventArgs _args)>& QueueList;
@@ -67,122 +73,60 @@ class EventArgs {
 		static List<EventThreadQueueObject> ThreadQueue; 
 		List<FunctionWrapper*> Subscribers;
 	public:
-		Event() {
-		}
-		~Event() {
-			Subscribers.Clear();
-		}
-		void Subscribe(FunctionWrapper* _other) {
-			try {
-				if (Subscribers == nullptr)
-					throw std::invalid_argument("Event not Intialized!");
-				if (Subscribers != _other)
-					throw std::invalid_argument("Function Pointers Do Not Match!");
-				else
-					if (_other->Index <= -1)
-						_other->Index = Subscribers.AddWithIndex(_other);
-					else
-						if (Subscribers[_other->Index] == _other)
-							throw std::invalid_argument("Repeat Function Listener!");
-						else
-							_other->Index = Subscribers.AddWithIndex(_other);
-			}
-			catch (std::invalid_argument e)
-			{
-				std::cout << e.what() << std::endl;
-			}
-		}
-		void UnSubscribe(FunctionWrapper* _other) {
-			try {
-				if (Subscribers == nullptr)
-					throw std::invalid_argument("Event not Intialized!");
-				if (Subscribers != _other)
-					throw std::invalid_argument("Function Pointers Do Not Match!");
-				else
-					if (_other->Index <= -1)
-						throw std::invalid_argument("Out of Bounds Index!");
-					else
-						if (Subscribers[_other->Index] == _other) {
-							Subscribers -= _other->Index;
-							_other->Index = -1;
-						}
-						else
-							throw std::invalid_argument("Function Listner Does Not Match!");
-					else
-						throw std::invalid_argument("Out of Bounds Index!");
-			}
-			catch (std::invalid_argument e)
-			{
-				std::cout << e.what() << std::endl;
-			}
-		}
-		void operator+=(FunctionWrapper* _other) {
-			try {
-				if (Subscribers == nullptr)
-					throw std::invalid_argument("Event not Intialized!");
-				if (Subscribers != _other)
-					throw std::invalid_argument("Function Pointers Do Not Match!");
-				else
-					if (_other->Index < Subscribers.GetSize())
-						if (_other->Index <= -1)
-							_other->Index = Subscribers.AddWithIndex(_other);
-						else
-							if (Subscribers[_other->Index] == _other)
-								throw std::invalid_argument("Repeat Function Listener!");
-						else
-							_other->Index = Subscribers.AddWithIndex(_other);
-			}
-			catch (std::invalid_argument e)
-			{
-				std::cout << e.what() << std::endl;
-			}
-		}
-		void operator-=(FunctionWrapper* _other) {
-			try {
-				if (Subscribers == nullptr)
-					throw std::invalid_argument("Event not Intialized!");
-				if (Subscribers != _other)
-					throw std::invalid_argument("Function Pointers Do Not Match!");
-				else
-					if (_other->Index <= -1)
-						throw std::invalid_argument("Out of Bounds Index!");
-					else 
-						if(_other->Index < Subscribers.GetSize())
-							if (Subscribers[_other->Index] == _other) {
-								Subscribers -= _other->Index;
-								_other->Index = -1;
-							}
-							else
-								throw std::invalid_argument("Function Listner Does Not Match!");
-					else
-						throw std::invalid_argument("Out of Bounds Index!");
-			}
-			catch (std::invalid_argument e)
-			{
-				std::cout << e.what() << std::endl;
-			}
-		}
-		void operator=(void(*_other)(const EventArgs _args)) {
-			try {
-			}
-			catch (std::invalid_argument e)
-			{
-				std::cout << e.what() << std::endl;
-			}
-		}
-		void Invoke(const EventArgs& _args) {
-			for (int i = 0; i < Subscribers.GetSize();i++)
-			{
-				Subscribers[i]->Callback(_args);
-			}
-		}
-		void InvokeThreaded(const EventArgs& _args) {
-
-		}
-		
-	private:
-
+		Event();
+		~Event();
+		void Subscribe(FunctionWrapper*);
+		void UnSubscribe(FunctionWrapper*);
+		void operator+=(FunctionWrapper*);
+		void operator-=(FunctionWrapper*);
+		void operator=(void(*_other)(const EventArgs _args));
+		void Invoke(const EventArgs& );
+		void InvokeThreaded(const EventArgs&);
 	};
+	
+	template<typename CallbackParameters = EventArgs, typename ReturnType = void, typename Wrapper = FunctionWrapper>
+	class Event {
+	public:
+		struct FunctionWrapper final {
+		private:
+			uint Index = -1; // Make Event Friend of this so it can be const and still be editable by Events
+			friend class Event;
+		public:
+			FunctionWrapper(auto callback) :
+				Index(-1),
+				Callback(callback) {
 
+			}
+			std::function<ReturnType(CallbackParameters&)>& Callback;
+			std::function<ReturnType(CallbackParameters&)>& SetCallback() {
+				try {
+					if (Index != -1)
+						throw std::invalid_argument("This Wrapper is Currently Listening!");
+					else
+						return Callback;
+				}
+				catch (std::invalid_argument e)
+				{
+					std::cout << e.what() << std::endl;
+				}
+			}
+		};
+	private:
+		struct EventThreadQueueObject {
+			List<ReturnType(*)(const CallbackParameters& _args)>& QueueList;
+			EventArgs eventArgs;
+		};
+		static List<EventThreadQueueObject> ThreadQueue; 
+		List<Wrapper*> Subscribers;
+	public:
+		Event();
+		~Event();
+		void Subscribe(Wrapper*);
+		void UnSubscribe(Wrapper*);
+		void operator+=(Wrapper*);
+		void operator-=(Wrapper*);
+		void Invoke(const CallbackParameters& );
+		void InvokeThreaded(const CallbackParameters&);
 
+}
 }
