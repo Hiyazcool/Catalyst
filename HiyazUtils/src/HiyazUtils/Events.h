@@ -29,11 +29,11 @@ Maybe use lambdas??????
 
 https://en.wikipedia.org/wiki/Observer_pattern
 */	
+namespace HiyazUtils {
 class EventArgs {
 
 	};
 
-namespace HiyazUtils {
 		struct FunctionWrapper final {
 		private:
 			uint Index = -1; // Make Event Friend of this so it can be const and still be editable by Events
