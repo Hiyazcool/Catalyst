@@ -85,7 +85,7 @@ class EventArgs {
 	};
 	
 	template<typename CallbackParameters = EventArgs, typename ReturnType = void, typename Wrapper = FunctionWrapper>
-	class Event {
+	class WrapperEvent {
 	public:
 		struct FunctionWrapper final {
 		private:
@@ -104,8 +104,8 @@ class EventArgs {
 		static List<EventThreadQueueObject> ThreadQueue; 
 		List<Wrapper*> Subscribers;
 	public:
-		Event();
-		~Event();
+		WrapperEvent();
+		~WrapperEvent();
 		void Subscribe(Wrapper*);
 		void UnSubscribe(Wrapper*);
 		void operator+=(Wrapper*);
