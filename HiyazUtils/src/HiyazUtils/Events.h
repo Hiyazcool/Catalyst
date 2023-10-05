@@ -18,8 +18,10 @@ Maybe use lambdas??????
      		Base Event With Abstract Functions
 			Allows Me to make a Generic Event with No Args As Well As Template Versions
 
-				
-   				
+		Look to make the Event Class Automatically Gather and Create the Wrapper Makeing it look like it doesnt need one
+
+		https://www.ibm.com/docs/en/i/7.5?topic=only-pointers-members-c	
+		https://isocpp.org/wiki/faq/pointers-to-members
 
 		Look at Hashs instead of Wrappers to track Functions
 		Seperate Implementation
