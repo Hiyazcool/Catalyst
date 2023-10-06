@@ -9,7 +9,9 @@ And the Point of My Util Library is nto to be better than the Standard Library o
 		Lambdas?
 *****		#Define DEBUG
 *****			for #IFDEF DEBUG Blocks
-				
+	
+	Do this -> https://learn.microsoft.com/en-us/cpp/build/reference/summary-visual-cpp?view=msvc-170
+	
 	Need to understand why the string is calling destructor
 		is it using non ref types?
 		is it because I am using a ref then a non ref????????????????

@@ -2,11 +2,11 @@
 #include "Log.h"
 namespace HiyazUtils {
 
-	Logger::Logger() {
+	Log::Logger::Logger() {
 
 	}
-	LogPriority Logger::CurrentPriority = Info;
-	void Logger::SetPriority(LogPriority _priority) {
+	Log::LogPriority Log::Logger::CurrentPriority = Info;
+	void Log::Logger::SetPriority(Log::LogPriority _priority) {
 		CurrentPriority = _priority;
 	}
 };

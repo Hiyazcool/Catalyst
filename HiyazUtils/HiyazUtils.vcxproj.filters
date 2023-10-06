@@ -81,4 +81,7 @@
   <ItemGroup>
     <Text Include="README.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="cpp.hint" />
+  </ItemGroup>
 </Project>

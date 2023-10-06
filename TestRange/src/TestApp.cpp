@@ -11,12 +11,14 @@
 //#include <string>
 using namespace HiyazUtils;
 using namespace Format;
+using namespace Event;
 //using namespace HiyazUtils
 
 	class Labryinth : public Catalyst::Application {
 	public :
-		Event TestEvent;
-		FunctionWrapper* TestWrapper;
+		WrapperEvent<EventArgs, void> TestEvent;
+		WrapperEvent<EventArgs, void>::FunctionWrapper* TestWrapper;
+		std::function<void(const EventArgs&)> Callback{ [&, this](const EventArgs& _args) { this->TestSub(_args);} };
 		int Something;
 		Labryinth() {
 
@@ -24,20 +26,19 @@ using namespace Format;
 		~Labryinth() {
 
 		}
-		void TestSub(const EventArgs _args) {
-			std::cout << "Test Successful! " << TestWrapper->Index << " " << Something;
+		void TestSub(const EventArgs& _args) {
+			std::cout << "Test Successful! " << TestWrapper->GetIndex() << " " << Something;
 		}
 		void Run() {
 			Something = 223;
-			TestWrapper = new FunctionWrapper(std::function<void(EventArgs)> { [&, this](EventArgs _args) { this->TestSub(_args);} });
-			TestWrapper->Callback = { [&, this](EventArgs _args) { this->TestSub(_args);} };
+			TestWrapper = new WrapperEvent<EventArgs,void>::FunctionWrapper(Callback);
+			TestWrapper->Callback = { [&, this](const EventArgs& _args) { this->TestSub(_args);} };
 			TestEvent += TestWrapper;
 			Something = 1032;
 			TestEvent.Invoke(EventArgs());
 			TestEvent -= TestWrapper;
 			TestEvent.Invoke(EventArgs());
 			std::cin.get();
-			
 		}
 
 	};
