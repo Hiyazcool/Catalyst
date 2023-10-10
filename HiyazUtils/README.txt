@@ -78,6 +78,13 @@ https://learn.microsoft.com/en-us/cpp/cpp/reference-type-function-returns?view=m
 https://learn.microsoft.com/en-us/cpp/cpp/rvalue-reference-declarator-amp-amp?view=msvc-170
 https://learn.microsoft.com/en-us/cpp/cpp/temporary-objects?view=msvc-170
 https://learn.microsoft.com/en-us/cpp/cpp/abstract-classes-cpp?view=msvc-170
+
+Event Notes
+https://en.cppreference.com/w/cpp/utility/functional/bind
+https://en.cppreference.com/w/cpp/utility/functional/function
+https://en.cppreference.com/w/cpp/utility/functional/invoke
+
+CPP REFERENCE IS GREAT
 constexpr
 inline
 friend
